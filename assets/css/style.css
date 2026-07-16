@@ -357,6 +357,29 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+.about .about-img {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .about .about-img-box {
+    position: absolute;
+    top: 0;
+    left: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
+    width: calc(100% - var(--bs-gutter-x, 1.5rem));
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .about .about-img {
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 40%; /* focus point: horizontal, vertical */
+    transform: scale(1.0); /* zoom: higher = more cropped from all sides */
+    transform-origin: 50% 40%; /* keep in sync with object-position */
+  }
+}
+
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
@@ -757,6 +780,15 @@ section {
   margin-left: 80px;
   line-height: 24px;
   font-size: 14px;
+}
+
+/*--------------------------------------------------------------
+# Publications thumbnails
+--------------------------------------------------------------*/
+.pub-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
 }
 
 /*--------------------------------------------------------------
